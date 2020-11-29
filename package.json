@@ -1,8 +1,8 @@
 {
-  "name": "nigiyakashi-server",
+  "name": "iot-cognito",
   "version": "0.1.0",
   "bin": {
-    "nigiyakashi-server": "bin/nigiyakashi-server.js"
+    "iot-cognito": "bin/iot-cognito.js"
   },
   "scripts": {
     "build": "tsc",
