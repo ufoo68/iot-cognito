@@ -6,8 +6,8 @@ export class IotStack extends cdk.Stack {
   constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props)
 
-    const projectName = 'nigiyakashi'
-    const policyName = `${projectName}_iot_policy`
+    const projectName = 'iot_cognito'
+    const policyName = `${projectName}_policy`
     const iotPolicy = new iot.CfnPolicy(this, 'IotPolicy', {
       policyDocument: {
         Version: '2012-10-17',
@@ -22,7 +22,7 @@ export class IotStack extends cdk.Stack {
       policyName,
     })
 
-    const thingName = `${projectName}_iot_thing`
+    const thingName = `${projectName}_thing`
     const iotThing = new iot.CfnThing(this, 'IotThing', { thingName })
     const ioTCertificateArn = ssm.StringParameter.fromStringParameterAttributes(this, 'IotCertArn', {
       parameterName: 'nigiyakashi-cert-arn',
